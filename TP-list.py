@@ -12,9 +12,9 @@ def menu_cours():
         ## 1 - Définition d'une liste
         Une liste en python permet de stocker des données.
         On parle de structure de données ou bien d’objet conteneur, c’est à dire d’un objet qui peut en contenir un autre.
-        Une liste est un objet modifiable (mutable) qui peut contenir un ou plusieurs type d'objet différents.
+        Une liste est un objet modifiable (mutable) qui peut contenir un ou plusieurs types d'objets différents.
 
-        On notes les listes avec des crochets, les valeurs séparées par des virgules : [ valeur1 , valeur2 ,valeur3 ]. Par exemple :
+        On note les listes avec des crochets, les valeurs séparées par des virgules : [ valeur1 , valeur2 ,valeur3 ]. Par exemple :
         ''')
         with st.echo():
             liste1 = [1, 2, 3] # Liste d'entiers
@@ -54,7 +54,7 @@ def menu_cours():
 
         st.write('''
         ## 4 - Accéder aux valeurs d'une liste
-        On peut accéder à un terme d'une liste très facilement quand on connait son indice en écrivant le nom de la liste suivit de l'indice entre crochet.
+        On peut accéder à un terme d'une liste très facilement quand on connait son indice en écrivant le nom de la liste suivi de l'indice entre crochets.
 
         Par exemple :
         ''')
@@ -64,7 +64,7 @@ def menu_cours():
             print(liste[0]) # Affiche le premier élément de la liste : 3
             print(liste[2]) # Affiche le premier élément de la liste : -3
         st.write('''
-        Attention, il faut être sur que l'élément existe. Essayer l'exemple suivant en enlevant le "#" au début de la deuxième ligne.
+        Attention, il faut être sûr que l'élément existe. Essayer l'exemple suivant en enlevant le "#" au début de la deuxième ligne.
         ''')
 
         with st.echo():
@@ -97,7 +97,7 @@ def menu_cours():
             liste = [3, 6, -3]
             print(liste)
         st.write('''
-        On peut aussi afficher tous les éléments un par un avec des boucles for :
+        On peut aussi afficher tous les éléments un par un avec une boucle for :
         ''')
 
         with st.echo():
@@ -125,7 +125,7 @@ def menu_cours():
         ## 1 - Ajouter des valeurs à la création
         ''')
         with st.echo():
-            liste = [3, 6, -3] # On créer une liste avec trois éléments
+            liste = [3, 6, -3] # On crée une liste avec trois éléments
 
         st.write('''
         ## 2 - Ajouter des valeurs avec _.append()_
@@ -150,39 +150,39 @@ def menu_cours():
 
         st.write('''
         ## 4 - Supprimer des valeurs avec _del_
-        La fonction _del liste[i]_ va supprimer l’item à l'indice i spécifié. On a pas besoin de connaitre l'élément, simplement son indice.
+        La fonction _del liste[i]_ va supprimer l’item à l'indice i spécifié. On n'a pas besoin de connaitre l'élément, simplement son indice.
         ''')
         with st.echo():
-            liste = [3, 6, -3] # On créer une liste avec 3 éléments
+            liste = [3, 6, -3] # On crée une liste avec 3 éléments
             print('On affiche liste avant de supprimer un élément : ', liste)
             del liste[0] # On supprime le premier élément de la liste
-            print('On affiche liste après avoir supprimer un élément : ', liste)
+            print('On affiche liste après avoir supprimé un élément : ', liste)
 
 
         st.write('''
         ## 5 - Supprimer des valeurs avec _.pop()_
-        La méthode _liste.pop(i)_ va supprimer l’item à l'indice _i_ spécifié comme _del_ mais en plus il **retourne la valeur supprimé**. Si on ne donne pas _i_, c’est le dernier élément qui est supprimé.
+        La méthode _liste.pop(i)_ va supprimer l’item à l'indice _i_ spécifié comme _del_ mais en plus il **retourne la valeur supprimée**. Si on ne donne pas _i_, c’est le dernier élément qui est supprimé.
         ''')
         with st.echo():
             import random
-            liste = [] # On créer une liste vide
+            liste = [] # On crée une liste vide
             for i in range(10): # et on va y ajouter 10 éléments
                 liste.append(random.randint(0,1)) # on y ajoute aléatoirement un entier entre 0 et 1
             element = liste.pop() # On enlève le dernier élément et on le récupère pour l'afficher
 
-            print('La liste après avoir supprimer un élément : ', liste)
+            print('La liste après avoir supprimé un élément : ', liste)
             print("L'élement supprimé est : ", element)
 
 
         st.write('''
         ## 6 - Supprimer des valeurs avec _.remove()_
         Il est possible de supprimer un item d'une liste avec sa valeur en utilisant la méthode _.remove(item)_. Cela va supprimer le premier élément de la liste égale à _item_.
-        Attention, il faut être sur que _item_ est contenu dans la liste, sinon il y aura une erreure.
+        Attention, il faut être sûr que _item_ est contenu dans la liste, sinon il y aura une erreur.
         ''')
         with st.echo():
             liste = [3, 6, -3]
             liste.remove(3) # On enlève l'item 3
-            print("Après suppression d'un élément liste contient :",liste)
+            print("Après suppression d'un élément, la liste contient :",liste)
             # liste.remove(3) # Si on essaie à nouveau, il y aura une erreur. Essayer en enlevant le "#" au début de la ligne.
 
     st.write("# III - Compléments")
@@ -190,15 +190,15 @@ def menu_cours():
         st.write('''
         ## 1 - Trier une liste
         Lorsque les items d'une liste sont du même type, on peut les trier en utilisant la méthode _.sort()_ :
-        - Pour une liste de nombres (entiers ou à virgules), la liste sera triée dans l'ordre croissant
-        - Pour une liste de charactères, ce sera par ordre alphabétique
-        - Pour une liste de booléens, ce sera tous les _False_ en premier puis les _True_
+        - Pour une liste de nombres (entiers ou à virgule), la liste sera triée dans l'ordre croissant
+        - Pour une liste de caractères, ce sera par ordre alphabétique
+        - Pour une liste de booléens, ce sera les _False_ en premier puis les _True_
         ''')
 
 
         with st.echo():
             liste1 = [4, 2, 9, -2] # Une liste de nombres
-            liste2 = ['b', 'a', 'x', 'p'] # Une liste de charactères
+            liste2 = ['b', 'a', 'x', 'p'] # Une liste de caractères
             liste3 = [True, False, False, True, False] # Une liste de booléens
             # On trie les listes :
             liste1.sort()
@@ -216,7 +216,7 @@ def menu_cours():
 
         with st.echo():
             liste1 = [4, 2, 9, -2] # Une liste de nombres
-            liste2 = ['b', 'a', 'x', 'p'] # Une liste de charactères
+            liste2 = ['b', 'a', 'x', 'p'] # Une liste de caractères
             liste3 = liste1 + liste2
             print("La liste3 contient : ", liste3)
 
@@ -245,13 +245,13 @@ def menu_cours():
             liste1 = [3, 6, -3]
             liste2 = [3, 2, -1]
 
-            liste1.reverse() # Ici la liste1 est modifié
+            liste1.reverse() # Ici la liste1 est modifiée
             print("La liste1 renversée : ", liste1)
             print("La liste2 renversée : ", liste2[::-1]) # ici, on affiche juste la liste renversée, la liste2 n'est pas modifée
 
         st.write('''
         ## 5 - Compter les occurences d'un item
-        On peut compter le nombre d'item identique dans une liste en utilisant la méthode _.count(item)_. Si _item_ n'est pas dans la liste, cela renverra 0.
+        On peut compter le nombre d'items identiques dans une liste en utilisant la méthode _.count(item)_. Si _item_ n'est pas dans la liste, cela renverra 0.
         ''')
 
         with st.echo():
@@ -353,7 +353,7 @@ def menu_ex_listes_1():
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 L1 = [3, 4, 5]
                 L1[0] = 1 # Le premier élément à pour indice 0
@@ -381,7 +381,7 @@ def menu_ex_listes_2():
     with cols[0]:
 
         with st.beta_expander("Aide"):
-            st.write("Remplacer les '...' en enlevant les mot clefs _try :_ , _except :_  et _pass_ :")
+            st.write("Remplacer les '...' en enlevant les mots-clefs _try :_ , _except :_  et _pass_ :")
             with st.echo():
                 try :
                     L1 = [..., ..., ...]
@@ -395,7 +395,7 @@ def menu_ex_listes_2():
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 L1 = [3, 4, 5]
                 L2 = []
@@ -410,7 +410,7 @@ def menu_ex_listes_2():
 ### EXERCICE 2 ###
     st.subheader("Exercice 2 :")
     st.write('''
-    1.  Créer une liste _L_ contenant les jours suivant (sous forme de charactères): Lundi, Mardi, Jeudi, Vendredi, Vendredi.
+    1.  Créer une liste _L_ contenant les jours suivants (sous forme de caractères): Lundi, Mardi, Jeudi, Vendredi, Vendredi.
     2.  Ajouter Mercredi au bon endroit.
     3.  Supprimer un Vendredi et afficher la liste afin de vérifier que nous avons tous les jours ouvrés.
     ''')
@@ -419,7 +419,7 @@ def menu_ex_listes_2():
     with cols[0]:
 
         with st.beta_expander("Aide"):
-            st.write("Remplacer les '...' en enlevant les mot clefs _try :_ , _except :_  et _pass_ :")
+            st.write("Remplacer les '...' en enlevant les mots-clefs _try :_ , _except :_  et _pass_ :")
             with st.echo():
                 try :
                     L = [..., ..., ..., ..., ...]
@@ -431,7 +431,7 @@ def menu_ex_listes_2():
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 L = ['Lundi', 'Mardi', 'Jeudi', 'Vendredi', 'Vendredi']
                 L.insert(2, 'Mercredi')
@@ -441,72 +441,10 @@ def menu_ex_listes_2():
     st.write("#")
     st.write("#")
 
-
 ### EXERCICE 3 ###
-    st.subheader("Exercice 3 :")
+    st.subheader("Exercice 3 : Tri sélection")
     st.write('''
-    1.  Créer une liste _L1_ de longueur 10 contenant aléatoirement des 1 ou des 0 en utilisant :
-    ''')
-    with st.echo():
-        import random
-        L1 = []
-        for _ in range(10):
-            L1.append(random.randint(0,1))
-    st.write('''
-    2.  Créer une liste _L2_ vide et la remplire avec les indices des items égaux à 1 dans _L1_.
-    3.  Supprimer tous les 1 de la liste L1 de deux méthodes différentes et afficher _L1_ pour vérifier.
-    ''')
-
-    cols = st.beta_columns([1,1])
-    with cols[0]:
-
-        with st.beta_expander("Aide"):
-            st.write("Remplacer les '...' en enlevant les mot clefs _try :_ , _except :_  et _pass_ :")
-            with st.echo():
-                try :
-                    L2 = []
-                    for index in range(...):
-                        if ... :
-                            L2.append(...)
-                    L1_copy = L1.copy() # Pour que l'on puisse faire les deu méthodes
-                    #Méthode 1 : on enlève directement les 1 dans L1
-                    while 1 in ... : # On boucle tant que L1 contient un 1
-                        L1.remove(...) # Et on enlève le premier à chaque fois
-                    print(L1)
-
-                    #Méthode 2 : on utilise les indices récupéré dans L2
-                    for index in ... :  # Attention, il faut parcourir L2 à l'envers
-                        L1_copy.pop(...)
-                    print(...)
-                except:
-                    pass
-
-    with cols[1]:
-        with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
-            with st.echo():
-                L2 = []
-                for index in range(len(L1)):
-                    if L1[index]==1 :
-                        L2.append(index)
-                L1_copy = L1.copy() # Pour que l'on puisse faire les deu méthodes
-                #Méthode 1 : on enlève directement les 1 dans L1
-                while 1 in L1 : # On boucle tant que L1 contient un 1
-                    L1.remove(1) # Et on enlève le premier à chaque fois
-                print(L1)
-
-                #Méthode 2 : on utilise les indices récupéré dans L2
-                for index in L2[::-1] :  # Attention, il faut parcourir L2 à l'envers
-                    L1_copy.pop(index)
-                print(L1_copy)
-
-    st.write("#")
-    st.write("#")
-
-### EXERCICE 4 ###
-    st.subheader("Exercice 4 : Tri sélection")
-    st.write('''
-    1.  Expliquer ce que fais la fonction suivante en la testant sur une liste _L = [3, 4, 1, -1]_ :
+    1.  Expliquer ce que fait la fonction suivante en la testant sur une liste _L = [3, 4, 1, -1]_ :
     ''')
     with st.echo():
         def ppe(L):
@@ -534,8 +472,9 @@ def menu_ex_listes_2():
     2.  Le principe du tri sélection est le suivant :
 
     À chaque passage, tant que la liste _L_ n'est pas vide, on retire la plus petite valeur trouvée dans la liste _L_ et on la stocke dans une nouvelle liste _L\_ordre_, initiallement vide. Cette liste contiendra donc la liste _L_ triée par ordre croissant.
+    Essayer d'effectuer cet algorithme à la main en utilisant la liste suivante : _L = [ 3, -1, 0, 2 ]_.
 
-    Utiliser la fonction _ppe_ précédente afin de compléter la fonction suivante :
+    3.  Utiliser la fonction _ppe_ précédente afin de compléter la fonction suivante :
     ''')
 
     with st.echo():
@@ -551,7 +490,7 @@ def menu_ex_listes_2():
     cols = st.beta_columns([1,1,1])
     with cols[0]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 def tri_selection(L):
                     L_ordre = []
@@ -569,6 +508,67 @@ def menu_ex_listes_2():
             L_ordre = tri_selection(L.copy())
             st.write("tri_selection([{}, {}, {}, {}]) : \n\n [{}, {}, {}, {}]".format(L[0],L[1],L[2],L[3],L_ordre[0], L_ordre[1], L_ordre[2], L_ordre[3]))
 
+        st.write("#")
+        st.write("#")
+
+
+### EXERCICE 4 ###
+    st.subheader("Exercice 4 :")
+    st.write('''
+    1.  Créer une liste _L1_ de longueur 10 contenant aléatoirement des 1 ou des 0 en utilisant :
+    ''')
+    with st.echo():
+        import random
+        L1 = []
+        for _ in range(10):
+            L1.append(random.randint(0,1))
+    st.write('''
+    2.  Créer une liste _L2_ vide et la remplir avec les indices des items égaux à 1 dans _L1_.
+    3.  Supprimer tous les 1 de la liste L1 de deux méthodes différentes (une en utilisant seulement _L1_ et une boucle _while_ et l'autre en utilisant _L2_ : attention au sens de parcours de la liste, pourquoi faut il la parcourir du dernier élément au premier et pas l'inverse ?) et afficher _L1_ pour vérifier.
+    ''')
+
+    cols = st.beta_columns([1,1])
+    with cols[0]:
+
+        with st.beta_expander("Aide"):
+            st.write("Remplacer les '...' en enlevant les mots-clefs _try :_ , _except :_  et _pass_ :")
+            with st.echo():
+                try :
+                    L2 = []
+                    for index in range(...):
+                        if ... :
+                            L2.append(...)
+                    L1_copy = L1.copy() # Pour que l'on puisse faire les deux méthodes
+                    #Méthode 1 : on enlève directement les 1 dans L1
+                    while 1 in ... : # On boucle tant que L1 contient un 1
+                        L1.remove(...) # Et on enlève le premier à chaque fois
+                    print(L1)
+
+                    #Méthode 2 : on utilise les indices récupérés dans L2
+                    for index in ... :  # Attention, il faut parcourir L2 à l'envers
+                        L1_copy.pop(...)
+                    print(...)
+                except:
+                    pass
+
+    with cols[1]:
+        with st.beta_expander("Solution"):
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
+            with st.echo():
+                L2 = []
+                for index in range(len(L1)):
+                    if L1[index]==1 :
+                        L2.append(index)
+                L1_copy = L1.copy() # Pour que l'on puisse faire les deux méthodes
+                #Méthode 1 : on enlève directement les 1 dans L1
+                while 1 in L1 : # On boucle tant que L1 contient un 1
+                    L1.remove(1) # Et on enlève le premier à chaque fois
+                print(L1)
+
+                #Méthode 2 : on utilise les indices récupérés dans L2
+                for index in L2[::-1] :  # Attention, il faut parcourir L2 à l'envers
+                    L1_copy.pop(index)
+                print(L1_copy)
 def menu_ex_listes_3():
     st.title("TP - Listes : Exercices III")
 
@@ -581,7 +581,7 @@ def menu_ex_listes_3():
     cols = st.beta_columns([1,1])
     with cols[0]:
         with st.beta_expander("Aide"):
-            st.write("Remplacer les '...' en enlevant les mot clefs _try :_ , _except :_  et _pass_ :")
+            st.write("Remplacer les '...' en enlevant les mots-clefs _try :_ , _except :_  et _pass_ :")
             with st.echo():
                 import random
                 def create_list(n, a, b):
@@ -592,7 +592,7 @@ def menu_ex_listes_3():
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 import random
                 def create_list(n, a, b):
@@ -602,12 +602,12 @@ def menu_ex_listes_3():
                     return L
     st.write("##")
     st.write('''
-    2.  Écrire une fonction _moyenne_ prenant en argument une liste _L_ et retournant la moyenne de cette dernière.
+    2.  Écrire une fonction _moyenne_ prenant en argument une liste _L_ et retournant la moyenne des éléments de la liste.
     ''')
     cols = st.beta_columns([1,1])
     with cols[0]:
         with st.beta_expander("Aide"):
-            st.write("Remplacer les '...' en enlevant les mot clefs _try :_ , _except :_  et _pass_ :")
+            st.write("Remplacer les '...' en enlevant les mots-clefs _try :_ , _except :_  et _pass_ :")
             with st.echo():
                 def moyenne(L):
                     sum = ...
@@ -617,7 +617,7 @@ def menu_ex_listes_3():
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 def moyenne(L):
                     sum = 0
@@ -626,23 +626,23 @@ def menu_ex_listes_3():
                     return sum/len(L)
     st.write("##")
     st.write('''
-    3.  Écrire une fonction _mediane_ prenant en argument une liste _L_ et retournant la médiane de cette dernière. (on peut utiliser int() pour s'assurer que l'on a un chiffre entier)
+    3.  Écrire une fonction _mediane_ prenant en argument une liste _L_ et retournant la médiane des éléments de la liste. (on peut utiliser int() pour s'assurer que l'on a un chiffre entier)
     ''')
     cols = st.beta_columns([1,1])
     with cols[0]:
         with st.beta_expander("Aide"):
-            st.write("Remplacer les '...' en enlevant les mot clefs _try :_ , _except :_  et _pass_ :")
+            st.write("Remplacer les '...' en enlevant les mots-clefs _try :_ , _except :_  et _pass_ :")
             with st.echo():
                 def mediane(L):
                     L.sort()           # On trie L
                     milieu = int(...)  # On cherche l'indice du milieu de la liste
-                    if len(L) % 2 == 0: # On regarde si la liste contient un nombre paire ou impaire de valeurs
+                    if len(L) % 2 == 0: # On regarde si la liste contient un nombre pair ou impair de valeurs
                         ...
                     else :
                         ...
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 def mediane(L):
                     L.sort()
@@ -663,7 +663,7 @@ def menu_ex_listes_3():
     ''')
 
     cols = st.beta_columns([1,1,1])
-    with cols[0]:
+    with cols[2]:
         with st.beta_expander("Aide"):
             st.write("Remplacer les '...' ")
             with st.echo():
@@ -671,13 +671,13 @@ def menu_ex_listes_3():
                     U = 1
                     L = ... # on inialise L
                     for i in range(...): # attention, on veut les n premiers termes
-                        U = ... # formule de récurence
+                        U = ... # formule de récurrence
                         ...
                     return ...
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 def suite(n, q):
                     U = 1
@@ -686,7 +686,7 @@ def menu_ex_listes_3():
                         U = q*U
                         L.append(U)
                     return L
-    with cols[2]:
+    with cols[0]:
         with st.beta_expander("Définir n et q : "):
             n = st.number_input("n = ", 0, 20, 10)
             q = st.number_input("q = ", -5.0, 5.0, 2.0)
@@ -730,7 +730,7 @@ def menu_ex_proba():
 ### EXERCICE 1 ###
     st.subheader("Exercice 1 : Loi uniforme")
     st.write('''
-    La roulette française possède 37 case numérotées de _0_ à _36_. La case _0_ est verte et les autres sont alternéativement rouges et noires.
+    La roulette française possède 37 cases numérotées de _0_ à _36_. La case _0_ est verte et les autres sont alternativement rouges et noires.
 
     Le jeu consiste à faire tourner la roulette afin qu'une bille tombe dans l'une des cases sachant qu'elle a autant de chances de tomber dans chacune des cases. On va s'intéresser à deux types de pari.
 
@@ -758,7 +758,7 @@ def menu_ex_proba():
 
     with cols[1]:
         with st.beta_expander("Solution"):
-            st.write("Recopies quand même dans EduPython pour t'assurer que tu comprends")
+            st.write("Recopie quand même dans EduPython pour t'assurer que tu comprends")
             with st.echo():
                 import random
                 def mise_numero(num, mise):
@@ -780,7 +780,7 @@ def menu_ex_proba():
     st.write('''
     2.2 -  Écrire une fonction _esperance\_mise\_numero_ permettant de jouer _n_ parties. Elle prendra en argument _num_, _mise_ et _n_ le nombre de parties à effectuer. Cette fonction retournera le gain moyen.
 
-    Essayer avec des valeurs de _n_ grandissante de _10_ à _10000000_ (pour _n_ très grand, cela peut prendre du temps). Que remarque t on ?
+    Essayer avec des valeurs de _n_ croissantes de _10_ à _10000000_ (pour _n_ très grand, cela peut prendre du temps). Que remarque t on ?
     ''')
 
     cols = st.beta_columns([1,1])
@@ -816,7 +816,7 @@ def menu_ex_proba():
     ##
     4.  Écrire une fonction _mise\_couleur_ prenant en argument _couleur_ ('rouge' ou 'noir') et _mise_ permettant de simuler une partie de ce jeu.
 
-    _AIDE : Pour simplifier les choses, on va partir du principe que les nombres paires sont noir et les nombres impaires sont rouge._
+    _AIDE : Pour simplifier les choses, on va partir du principe que les nombres pairs sont noirs et les nombres impairs sont rouges._
 
     _Rappel : *a%b* renvoie le reste de la division eucidienne de *a* par *b*._
     ''')
@@ -827,7 +827,7 @@ def menu_ex_proba():
             with st.echo():
                 import random
                 def mise_couleur(couleur, mise):
-                    assert couleur == 'noir' or couleur == 'rouge', "L'argument couleur doit être soir 'rouge' soit 'noir'."
+                    assert couleur == 'noir' or couleur == 'rouge', "L'argument couleur doit être soit 'rouge' soit 'noir'."
                     alea = ...
                     if ... : # vert
                         couleur_alea = ...
@@ -838,7 +838,7 @@ def menu_ex_proba():
 
                     if ... : # couleur identique
                         gain = mise
-                    elif ... : # couleur differente mais different de vert
+                    elif ... : # couleurs differentes et couleur autre que verte
                         gain = -mise
                     else : # vert
                         alea = ...
@@ -859,7 +859,7 @@ def menu_ex_proba():
             with st.echo():
                 import random
                 def mise_couleur(couleur, mise):
-                    assert couleur == 'noir' or couleur == 'rouge', "L'argument couleur doit être soir 'rouge' soit 'noir'."
+                    assert couleur == 'noir' or couleur == 'rouge', "L'argument couleur doit être soit 'rouge' soit 'noir'."
                     alea = random.randint(0,36)
                     if alea == 0 : # vert
                         couleur_alea = 'vert'
@@ -870,7 +870,7 @@ def menu_ex_proba():
 
                     if couleur == couleur_alea : # couleur identique
                         gain = mise
-                    elif couleur_alea != 'vert' : # couleur differente mais different de vert
+                    elif couleur_alea != 'vert' : # couleurs differentes et couleur autre que verte
                         gain = -mise
                     else : # vert
                         alea = random.randint(0, 36)
@@ -891,9 +891,9 @@ def menu_ex_proba():
     st.write("##")
     st.write('''
     5.  On peut aussi estimer la loi de probabilité empirique à l'aide d'un [histogramme](https://fr.wikipedia.org/wiki/Histogramme).
-    Ce dernier va compter le nombre de fois que chacune des issus de l'expérience aléatoire est apparu et le diviser par le tirage ce qui donne une approximation de la loi de probabilité.
+    Ce dernier va compter le nombre de fois où chacune des issues de l'expérience aléatoire est apparue puis le diviser par le nombre total d'issues, ce qui donne une approximation de la loi de probabilité.
 
-    Pour ce faire, nous avons besoin de récuperer dans une liste, toutes les issus d'une expérience aléatoire. Quel est, dans le premier exemple, l'ensemble des issues possible ?
+    Pour ce faire, nous avons besoin de récuperer dans une liste, toutes les issues d'une expérience aléatoire. Quel est, dans le premier exemple, l'ensemble des issues possibles ?
     Écrire une fonction _lancers\_roulettes_ prenant en argument _n_ le nombre de lancers à effectuer et retourner la liste des nombres issus des lancers.
     ''')
 
@@ -933,9 +933,9 @@ def menu_ex_proba():
     st.write('''
     Essayer cette fonction avec différentes valeurs de _n_ de _10_ à _100000_.
 
-    On appelle cette loi, la *_loi uniforme_*. Avez vous une idée de pourquoi ?
+    On appelle cette loi, la *_loi uniforme_*. Avez vous une idée de la raison ?
 
-    Sauriez vous dire vers quel nombre chacune des barres verticale de l'histogramme tend ?
+    Sauriez vous dire vers quel nombre chacune des barres verticales de l'histogramme, tend ?
     ''')
     st.write("#")
 
