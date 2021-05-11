@@ -575,7 +575,7 @@ def menu_ex_listes_3():
 ### EXERCICE 1 ###
     st.subheader("Exercice 1 :")
     st.write('''
-    1.  Écrire une fonction _create\_list_ prenant en argument un nombre entier positif _n_ et deux nombres _a_ et _b_ et qui renvoie une liste _L_ de nombres aléatoires entre _a_ et _b_ de longueur _n_.
+    1.  Écrire une fonction _create\_list_ prenant en argument un nombre entier positif _n_ et deux nombres _a_ et _b_ **avec _a_ < _b_** et qui renvoie une liste _L_ de nombres aléatoires entre _a_ et _b_ de longueur _n_.
     ''')
 
     cols = st.beta_columns([1,1])
