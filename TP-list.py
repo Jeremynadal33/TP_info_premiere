@@ -769,11 +769,20 @@ def menu_ex_proba():
                         gain = -mise
                     return gain
     with cols[2]:
+        def mise_numero_2(num, mise):
+            alea = random.randint(0, 36)
+            if num == alea :
+                gain = 35 * mise
+            else :
+                gain = -mise
+            return gain, alea
         with st.beta_expander("Définir num et mise : "):
             num = st.number_input("num = ", 0, 37, 7)
             mise = st.number_input("mise = ", 0, 50, 37)
         if st.button("Tester"):
-            st.markdown('Le gain est : '+str(mise_numero(num, mise))+'€')
+            gain, alea = mise_numero_2(num, mise)
+            st.markdown('Le numéro était : ' + str(alea) )
+            st.markdown('Le gain est : '+str(gain)+'€')
 
 
     st.write("##")
